@@ -17,10 +17,11 @@ require("lazy").setup({
     require("plugins.treesitter"),
     require("plugins.lsp"),
     require("plugins.completions"),
-    require("plugins.copilotchat"),
+    require("plugins.copilot"),
     require("plugins.formatting"),
     require("plugins.harpoon"),
     require("plugins.fugitive"),
+    require("plugins.gitsigns"),
     require("plugins.lualine"),
     require("plugins.misc"),
 })

@@ -142,7 +142,4 @@ return { -- Autocompletion
             })
         end,
     },
-    {
-        "github/copilot.vim",
-    },
 }
