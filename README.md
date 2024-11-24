@@ -6,9 +6,12 @@ Welcome to my **dotfiles** repo, it's mostly gruvbox themed and still a work in 
 
 ```plaintext
 dotfiles/
-├── .config/nvim/           # Neovim config
-├── .config/tmux/           # tmux config
-├── .config/starship.toml   # starship prompt config
+└── .config/
+    ├── nvim/
+    │   └── ...
+    ├── tmux/
+    │   └── ...
+    └── starship.toml
 ```
 
 ## Requirements
