@@ -18,37 +18,23 @@ Ensure you have the following installed on your system:
 
 ```bash
 $ sudo apt install git # for Debian-based systems
-```
 
-```bash
 $ sudo pacman -S git # for Arch-based systems
-```
 
-```bash
 $ sudo dnf install git # for Fedora-based systems
-```
 
-```bash
 $ brew install git # for macOS
 ```
-
-````bash
 
 ### GNU STOW
 
 ```bash
 $ sudo apt install stow # for Debian-based systems
-````
 
-```bash
 $ sudo pacman -S stow # for Arch-based systems
-```
 
-```bash
 $ sudo dnf install stow # for Fedora-based systems
-```
 
-```bash
 $ brew install stow # for macOS
 ```
 
