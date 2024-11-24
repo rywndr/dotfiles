@@ -6,12 +6,13 @@ Welcome to my **dotfiles** repo, it's mostly gruvbox themed and still a work in 
 
 ```plaintext
 dotfiles/
-└── .config/
-    ├── nvim/
-    │   └── ...
-    ├── tmux/
-    │   └── ...
-    └── starship.toml
+├── .config/
+│   ├── nvim/
+│   │   └── ...
+│   ├── tmux/
+│   │   └── ...
+│   └── starship.toml
+└── .zshrc
 ```
 
 ## Requirements
