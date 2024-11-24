@@ -7,6 +7,8 @@ Welcome to my **dotfiles** repo, it's mostly gruvbox themed and still a work in 
 ```plaintext
 dotfiles/
 ├── .config/
+│   ├── fastfetch/
+│   │   └── ...
 │   ├── nvim/
 │   │   └── ...
 │   ├── tmux/
