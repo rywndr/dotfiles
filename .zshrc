@@ -86,11 +86,12 @@ PATH="$PATH":"$HOME/.local/scripts/"
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias vim="nvim"
 alias ls="eza --icons -a"
 alias lt="eza --tree --icons -L 1"
-alias c="clear"
+alias sv="sudo -E nvim"
+alias v="nvim"
 alias py="python"
+alias c="clear"
 
 # --------------------------------------------------
 # Keybindings
