@@ -1,0 +1,33 @@
+# settings
+set shell /bin/zsh
+set hidden false
+set ignorecase true
+set icons true
+set scrolloff 10
+
+# custom cmd(s)
+cmd makedir ${{
+    printf "dir name: \n"
+    read ans
+    mkdir $ans
+}}
+
+cmd touch ${{
+    printf "file name: \n"
+    read ans
+    touch $ans
+}}
+
+cmd open ${{
+    %nvim %f
+}}
+
+# lf bindings
+map . set hidden
+map y copy
+map p paste
+map x cut
+map <delete>  delete
+map d makedir
+map a touch
+map <enter> open
