@@ -129,11 +129,11 @@ bindkey -s ^f "tmux-sessionizer\n"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Uncomment if you want to manually set your language environment.
 # export LANG=en_US.UTF-8
