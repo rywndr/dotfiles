@@ -1,25 +1,36 @@
 # settings
 set shell /bin/zsh
-set hidden false
+set hidden true
 set ignorecase true
-set icons true
 set scrolloff 10
+set icons
+set info size
+set dircounts
 
 # custom cmd(s)
-cmd makedir ${{
-    printf "dir name: \n"
-    read ans
-    mkdir $ans
+
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$nvim \$fx";;
+		*) xdg-open "$f"
+	esac
 }}
 
-cmd touch ${{
-    printf "file name: \n"
-    read ans
-    touch $ans
+cmd chmodx &{{
+	sudo chmod u+x $fx
+	lf -remote "send $id reload"
 }}
 
-cmd open ${{
-    %nvim %f
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.rar) unrar x "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *.7z) 7z e "$f" ;;
+      *) echo "format not supported" ;;
+  esac
 }}
 
 # lf bindings
@@ -27,7 +38,9 @@ map . set hidden
 map y copy
 map p paste
 map x cut
-map <delete>  delete
-map d makedir
-map a touch
+map D delete
+map d push :mkdir<space>
+map R reload
+map \% push $touch<space>
 map <enter> open
+map X chmodx
