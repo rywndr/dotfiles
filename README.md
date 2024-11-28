@@ -6,17 +6,36 @@ Welcome to my **dotfiles** repo, it's mostly gruvbox themed and still a work in 
 
 ```plaintext
 dotfiles/
-├── .config/
-│   ├── fastfetch/
-│   │   └── ...
-│   ├── lf/
-│   │   └── ...
-│   ├── nvim/
-│   │   └── ...
-│   ├── tmux/
-│   │   └── ...
-│   └── starship.toml
-└── .zshrc
+├── fastfetch/
+│   ├── .config/
+│   │   └── fastfetch/
+|   |       └── ...
+├── lf/
+│   ├── .config/
+│   │   └── lf/
+|   |       └── ...
+├── nvim/
+│   ├── .config/
+│   │   └── nvim/
+|   |       └── ...
+├── starship/
+│   ├── .config/
+│   │   └── starship/
+|   |       └── ...
+├── suckless/
+│   ├── .config/
+│   │   ├── dmenu/
+|   |   |    └── ...
+│   │   ├─── dwm/
+|   |   |     └── ...
+|   |   ├──── st/
+|   |   |     └── ...
+├── tmux/
+│   ├── .config/
+│   │   └── tmux/
+|   |       └── ...
+└── zsh/
+    └── ...
 ```
 
 ## Requirements
