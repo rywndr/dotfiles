@@ -6,6 +6,10 @@ Welcome to my **dotfiles** repo, it's mostly gruvbox themed and still a work in 
 
 ```plaintext
 dotfiles/
+├── btop/
+│   └── .config/
+│       └── btop/
+|           └── ...
 ├── fastfetch/
 │   └── .config/
 │       └── fastfetch/
