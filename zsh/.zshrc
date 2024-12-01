@@ -158,3 +158,6 @@ export NVM_DIR="$HOME/.nvm"
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
+# So that I don't have to re enter my ssh key password
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
