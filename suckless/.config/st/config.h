@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Fira Code Nerd Font:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 14;
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -91,10 +91,10 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.82, alphaUnfocused = 0.65;
+float alpha = 0.8, alphaUnfocused = 0.6;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -134,7 +134,7 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
-unsigned int bg = 16, bgUnfocused = 16;
+unsigned int bg = 16, bgUnfocused = 0;
 unsigned int const currentBg = 8, buffSize = 2048;
 /// Enable double / triple click yanking / selection of word / line.
 int const mouseYank = 1, mouseSelect = 0;
@@ -156,7 +156,7 @@ Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,232,11},
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃ ")
+ * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
 
@@ -239,7 +239,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
@@ -248,11 +248,11 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ ControlMask|ShiftMask,               XK_M,           zoom,           {.f = +1} },
-	{ ControlMask|ShiftMask,               XK_N,           zoom,           {.f = -1} },
+	{ MODKEY,               XK_m,           zoom,           {.f = +1} },
+	{ MODKEY,               XK_n,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ ControlMask|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
-	{ ControlMask|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
+	{ MODKEY|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
+	{ MODKEY|ShiftMask,     XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
@@ -528,3 +528,14 @@ static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 	"`abcdefghijklmnopqrstuvwxyz{|}~";
+
+/*
+ * Open urls starting with urlprefixes, contatining urlchars
+ * by passing as ARG1 to urlhandler.
+ */
+char* urlhandler = "xdg-open";
+char urlchars[] =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	"abcdefghijklmnopqrstuvwxyz"
+	"0123456789-._~:/?#@!$&'*+,;=%";
+char* urlprefixes[] = {"http://", "https://", NULL};
